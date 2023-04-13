@@ -195,6 +195,8 @@ section{
 .Game-box .GameName{
     width: 100%;
     font-size: 30px;
+    padding-top: 7px;
+    padding-bottom: 7px;
     border: 10px var(--main-Color);
     border-radius: 0px 0px 10px 10px;
     color: var(--main-Color);
