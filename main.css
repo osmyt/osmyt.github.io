@@ -162,6 +162,16 @@ section{
 .My-Games{
     background-color: var(--BG-Color);
 }
+.Games-cont{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 200px);
+    justify-content: center;
+    grid-gap: 10px;
+    max-width: 1000px;
+    width: 100%;
+    height: auto;
+    margin: 20px auto;
+}
 .My-Games .title
 {
     margin-top: -6rem;
@@ -169,13 +179,6 @@ section{
     font-size: 60px;
     color: var(--main-Color);
     font-family: var(--main-font);
-}
-.Game-cont{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    flex-wrap: wrap;
 }
 .Game-box{
     justify-content: center;
@@ -187,6 +190,9 @@ section{
     background-color: var(--BG2-Color);
     box-shadow: 1px 4px 25px;
     transition: 0.3s;
+}
+.Game-box a{
+    text-decoration: none;
 }
 .Game-box img{
     width: 100%;
