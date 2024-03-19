@@ -4,10 +4,10 @@
     padding: 0;
 }
 :root{
-    --BG-Color: #1f2d2a;
-    --BG2-Color: #334a42;
-    --main-Color: #00ffc3;
-    --hover-Color: #2cf4ffd0;
+    --BG-Color: #363534;
+    --BG2-Color: #212121;
+    --main-Color: #fca272;
+    --hover-Color: #f79059;
     --text-color: #fff;
 
     --main-font: 'Lilita One';
