@@ -23,6 +23,8 @@
     --box-width: 19rem;
     --box-height: 14rem;
     --box-TSize: 2rem;
+
+    overflow: hidden;
 }
 body{
     display: flex;
