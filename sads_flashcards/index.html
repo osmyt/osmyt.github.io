@@ -204,7 +204,7 @@
             },
             {
                 id: "q10",
-                question: "ماذا يقصد بـ \"يبسط الرزق\" و\"يقدر\" في قوله تعالى: ﴿ إِنَّ رَبَّكَ يَبْسُطُ الرِّزْقَ لِمَن يَشَاءُ وَيَقْدِرُ ﴾؟",
+                question: "ماذا يقصد بـ \"يبسط الرزق\" و\"يقدر\" في قوله تعالى: ﴿ إِنَّ رَبَّكَ يَبْسُطُ الرِّزْزْقَ لِمَن يَشَاءُ وَيَقْدِرُ ﴾؟",
                 answerOptions: [
                     { text: "يبسط الرزق: يعطي عطاءً جزيلاً؛ ويقدر: يضيق.", isCorrect: true },
                     { text: "يبسط الرزق: يمنع؛ ويقدر: يوسع.", isCorrect: false },
@@ -387,6 +387,16 @@
                     nextQ = ALL_QUESTIONS[0]; // Fallback, should not happen if ALL_QUESTIONS is not empty
                 }
             }
+            // If currentQuestion is null after trying to get the next question,
+            // it means there are no questions available to show.
+            if (!nextQ) {
+                 questionTextElem.textContent = 'لا توجد أسئلة للمراجعة حالياً.';
+                 toggleAnswerBtn.classList.add('hidden');
+                 nextQuestionBtn.classList.add('hidden');
+                 difficultyButtonsDiv.classList.add('hidden');
+                 return; // Exit function if no question to show
+            }
+
 
             currentQuestion = nextQ;
             renderCurrentQuestion(); // Update UI with the new question
@@ -534,6 +544,9 @@
                     } else if (showAllQuestions) {
                         // Re-render all questions to reflect changes in difficulty/review times
                         renderAllQuestions();
+                    } else {
+                        // If currentQuestion exists, update it to reflect any new status (e.g., from another device)
+                        renderCurrentQuestion();
                     }
                     feedbackMessageElem.textContent = ''; // Clear loading/error messages
                 }, (error) => {
